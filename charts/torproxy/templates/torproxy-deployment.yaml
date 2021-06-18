@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tor-proxy
+  labels:
+    app: tor-proxy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tor-proxy
+  template:
+    metadata:
+      labels:
+        app: tor-proxy
+    spec:
+      containers:
+        - name: tor-proxy
+          image: "{{ .Values.darkweb.image.name }}:{{ .Values.darkweb.image.tag }}"
+          imagePullPolicy: Always
