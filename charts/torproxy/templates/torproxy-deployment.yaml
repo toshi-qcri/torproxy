@@ -5,7 +5,7 @@ metadata:
   labels:
     app: tor-proxy
 spec:
-  replicas: 1
+  replicas: 10
   selector:
     matchLabels:
       app: tor-proxy
@@ -16,5 +16,5 @@ spec:
     spec:
       containers:
         - name: tor-proxy
-          image: "{{ .Values.darkweb.image.name }}:{{ .Values.darkweb.image.tag }}"
-          imagePullPolicy: Always
+          image: "dperson/torproxy:latest"
+          imagePullPolicy: IfNotPresent
