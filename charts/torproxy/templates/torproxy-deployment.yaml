@@ -18,3 +18,8 @@ spec:
         - name: tor-proxy
           image: "dperson/torproxy:latest"
           imagePullPolicy: IfNotPresent
+          env:
+            - name: TOR_NewCircuitPeriod
+              value: "6000"
+            - name: BW
+              value: "1000000"
