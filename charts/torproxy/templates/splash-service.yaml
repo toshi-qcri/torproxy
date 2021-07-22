@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: splash
+spec:
+  selector:
+    app: splash
+  ports:
+    - targetPort: 8050
+      port: 8050
+      protocol: TCP
+      name: splash
+  type: LoadBalancer

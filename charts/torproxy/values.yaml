@@ -1,3 +1,5 @@
-darkweb:
-  elasticsearch:
-    ip:
+proxy:
+  name: "tor-proxy"
+  port: "8118"
+splash:
+  timeout: 5000
