@@ -19,12 +19,12 @@ spec:
           image: "scrapinghub/splash:latest"
           imagePullPolicy: IfNotPresent
           volumeMounts:
-            - name: proxy-profiles
+            - name: "proxy-profiles"
               mountPath: "/etc/splash/proxy-profiles"
           args:
             - "--max-timeout"
-            - {{ .Values.splash.timeout }}
+            - {{ quote .Values.splash.timeout }}
       volumes:
-        - name: proxy-profiles
+        - name: "proxy-profiles"
           configMap:
             name: {{ .Release.Name }}-configmap
