@@ -22,7 +22,7 @@ spec:
             - name: proxy-profiles
               mountPath: "/etc/splash/proxy-profiles"
           args:
-            - --max-timeout
+            - "--max-timeout"
             - {{ .Values.splash.timeout }}
       volumes:
         - name: proxy-profiles
