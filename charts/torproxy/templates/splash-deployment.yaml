@@ -24,6 +24,7 @@ spec:
           args:
             - "--max-timeout"
             - {{ quote .Values.splash.timeout }}
+            - "--disable-browser-caches"
       volumes:
         - name: "proxy-profiles"
           configMap:
